@@ -12,8 +12,8 @@ namespace WebAPI.Controllers
     {
         
         private UserRepository repository = new UserRepository();
-        
-        [HttpPost]
+
+        [Route("api/User/Login")]
         public User Login([FromBody]Models.LoginInput loginInput)
         {
             User user = repository.FindByUserName(loginInput.Username);
@@ -41,8 +41,10 @@ namespace WebAPI.Controllers
         // POST: api/User
         public void Post([FromBody]User value)
         {
-            this.repository.Create(value);
             
+
+            this.repository.Create(value);
+
         }
 
         // PUT: api/User/5
