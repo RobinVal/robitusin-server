@@ -210,9 +210,10 @@
     <Compile Include="Models\Message\Message.cs" />
     <Compile Include="Models\Message\MessageContext.cs" />
     <Compile Include="Models\Message\MessageRepository.cs" />
-    <Compile Include="Models\User\MyContext.cs" />
-    <Compile Include="Models\User\User.cs" />
-    <Compile Include="Models\User\UserRepository.cs" />
+    <Compile Include="Models\UserFile\LoginInput.cs" />
+    <Compile Include="Models\UserFile\MyContext.cs" />
+    <Compile Include="Models\UserFile\User.cs" />
+    <Compile Include="Models\UserFile\UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

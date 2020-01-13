@@ -10,16 +10,20 @@ namespace WebAPI.Controllers
 {
     public class UserController : ApiController
     {
+        
         private UserRepository repository = new UserRepository();
-
-        public void Get(string FirstName, string Password)
+        
+        [HttpPost]
+        public User Login([FromBody]Models.LoginInput loginInput)
         {
-            IEnumerable<User> users= this.Get();
-            bool exists = true;
-            while(exists)
+            User user = repository.FindByUserName(loginInput.Username);
+            if (user.Password == loginInput.Password)
             {
-
-            }
+                return user;
+            } 
+            
+                throw new UnauthorizedAccessException();
+            
         }
 
         // GET: api/User

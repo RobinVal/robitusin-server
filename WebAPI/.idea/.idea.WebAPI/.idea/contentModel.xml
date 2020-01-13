@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Robian\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_WebAPI.-2141963915.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Robian\Desktop\s\WebAPI" t="IncludeFlat">
+    <e p="C:\Users\Robian\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_WebAPI.1389114460.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Robian\Documents\projektSkola\robitusin-server\WebAPI" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="WebAPI" t="IncludeRecursive">
         <e p="App_Data" t="Include" />
@@ -96,8 +96,12 @@
           <e p="Site.css" t="Include" />
         </e>
         <e p="Controllers" t="Include">
+          <e p="ConversationController.cs" t="Include" />
+          <e p="ConversationMemberController.cs" t="Include" />
+          <e p="FriendshipController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
-          <e p="PeopleController.cs" t="Include" />
+          <e p="MessageController.cs" t="Include" />
+          <e p="UserController.cs" t="Include" />
           <e p="ValuesController.cs" t="Include" />
         </e>
         <e p="favicon.ico" t="Include" />
@@ -111,9 +115,31 @@
         <e p="Global.asax" t="Include" />
         <e p="Global.asax.cs" t="Include" />
         <e p="Models" t="Include">
-          <e p="MyContext.cs" t="Include" />
-          <e p="Person.cs" t="Include" />
-          <e p="PersonRepository.cs" t="Include" />
+          <e p="Conversation" t="Include">
+            <e p="Conversation.cs" t="Include" />
+            <e p="ConversationContext.cs" t="Include" />
+            <e p="ConversationRepository.cs" t="Include" />
+          </e>
+          <e p="ConversationMember" t="Include">
+            <e p="ConMemContext.cs" t="Include" />
+            <e p="ConversationMember.cs" t="Include" />
+            <e p="ConversationMemberRepository.cs" t="Include" />
+          </e>
+          <e p="Friendship" t="Include">
+            <e p="Friendship.cs" t="Include" />
+            <e p="FriendshipContext.cs" t="Include" />
+            <e p="FriendshipRepository.cs" t="Include" />
+          </e>
+          <e p="Message" t="Include">
+            <e p="Message.cs" t="Include" />
+            <e p="MessageContext.cs" t="Include" />
+            <e p="MessageRepository.cs" t="Include" />
+          </e>
+          <e p="User" t="Include">
+            <e p="MyContext.cs" t="Include" />
+            <e p="User.cs" t="Include" />
+            <e p="UserRepository.cs" t="Include" />
+          </e>
         </e>
         <e p="obj" t="ExcludeRecursive" />
         <e p="packages.config" t="Include" />

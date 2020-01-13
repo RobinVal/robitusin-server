@@ -25,18 +25,12 @@ namespace WebAPI.Models
         public void Create(User user)
         {
             this.context.Users.Add(user);
-            this.context.SaveChanges();
+            //this.context.SaveChanges();
         }
 
         public void Update(User user)
         {
-            /*Person current = this.FindById(person.Id);
-
-            current.Name = person.Name;
-            current.Surname = person.Surname;
-            current.Age = person.Age;
-
-            this.context.SaveChanges();*/
+        
 
             this.context.Entry(user).State = System.Data.Entity.EntityState.Modified;
             this.context.SaveChanges();
@@ -46,6 +40,10 @@ namespace WebAPI.Models
         {
             this.context.Users.Remove(user);
             this.context.SaveChanges();
+        }
+        public User FindByUserName(string name)
+        {
+            return this.context.Users.Where(u => u.Username == name).First();
         }
     }
 }
