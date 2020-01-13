@@ -12,6 +12,16 @@ namespace WebAPI.Controllers
     {
         private UserRepository repository = new UserRepository();
 
+        public void Get(string FirstName, string Password)
+        {
+            IEnumerable<User> users= this.Get();
+            bool exists = true;
+            while(exists)
+            {
+
+            }
+        }
+
         // GET: api/User
         public IEnumerable<User> Get()
         {
