@@ -188,7 +188,9 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\ConversationController.cs" />
     <Compile Include="Controllers\ConversationMemberController.cs" />
+    <Compile Include="Controllers\FriendshipController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -199,6 +201,12 @@
     <Compile Include="Models\ConversationMember\ConversationMember.cs" />
     <Compile Include="Models\ConversationMember\ConversationMemberRepository.cs" />
     <Compile Include="Models\ConversationMember\ConMemContext.cs" />
+    <Compile Include="Models\Conversation\Conversation.cs" />
+    <Compile Include="Models\Conversation\ConversationContext.cs" />
+    <Compile Include="Models\Conversation\ConversationRepository.cs" />
+    <Compile Include="Models\Friendship\Friendship.cs" />
+    <Compile Include="Models\Friendship\FriendshipContext.cs" />
+    <Compile Include="Models\Friendship\FriendshipRepository.cs" />
     <Compile Include="Models\Message\Message.cs" />
     <Compile Include="Models\Message\MessageContext.cs" />
     <Compile Include="Models\Message\MessageRepository.cs" />
