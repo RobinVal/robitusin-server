@@ -200,15 +200,11 @@
     </Compile>
     <Compile Include="Models\ConversationMember\ConversationMember.cs" />
     <Compile Include="Models\ConversationMember\ConversationMemberRepository.cs" />
-    <Compile Include="Models\ConversationMember\ConMemContext.cs" />
     <Compile Include="Models\Conversation\Conversation.cs" />
-    <Compile Include="Models\Conversation\ConversationContext.cs" />
     <Compile Include="Models\Conversation\ConversationRepository.cs" />
     <Compile Include="Models\Friendship\Friendship.cs" />
-    <Compile Include="Models\Friendship\FriendshipContext.cs" />
     <Compile Include="Models\Friendship\FriendshipRepository.cs" />
     <Compile Include="Models\Message\Message.cs" />
-    <Compile Include="Models\Message\MessageContext.cs" />
     <Compile Include="Models\Message\MessageRepository.cs" />
     <Compile Include="Models\UserFile\LoginInput.cs" />
     <Compile Include="Models\UserFile\MyContext.cs" />

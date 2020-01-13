@@ -7,35 +7,35 @@ namespace WebAPI.Models.Message
 {
     public class MessageRepository
     {
-        private MessageContext context = new MessageContext();
+        
 
         public List<Message> FindAll()
         {
-            return this.context.Messages.ToList();
+            return MyContext.Get().Messages.ToList();
         }
 
         public Message FindById(int Id)
         {
            
-            return this.context.Messages.Find(Id);
+            return MyContext.Get().Messages.Find(Id);
         }
 
         public void Create(Message messge)
         {
-            this.context.Messages.Add(messge);
-            this.context.SaveChanges();
+            MyContext.Get().Messages.Add(messge);
+            MyContext.Get().SaveChanges();
         }
 
         public void Update(Message message)
         {
-            this.context.Entry(message).State = System.Data.Entity.EntityState.Modified;
-            this.context.SaveChanges();
+            MyContext.Get().Entry(message).State = System.Data.Entity.EntityState.Modified;
+            MyContext.Get().SaveChanges();
         }
 
         public void Delete(Message message)
         {
-            this.context.Messages.Remove(message);
-            this.context.SaveChanges();
+            MyContext.Get().Messages.Remove(message);
+            MyContext.Get().SaveChanges();
         }
     }
 }

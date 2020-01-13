@@ -7,35 +7,34 @@ namespace WebAPI.Models
 {
     public class ConversationMemberRepository
     {
-        private ConMemContext context = new ConMemContext();
 
         public List<ConversationMember> FindAll()
         {
-            return this.context.Members.ToList();
+            return MyContext.Get().Members.ToList();
         }
 
         public ConversationMember FindById(int Id)
         {
             //return this.context.People.Where(x => x.Id == id).FirstOrDefault();
-            return this.context.Members.Find(Id);
+            return MyContext.Get().Members.Find(Id);
         }
 
         public void Create(ConversationMember member)
         {
-            this.context.Members.Add(member);
-            this.context.SaveChanges();
+            MyContext.Get().Members.Add(member);
+            MyContext.Get().SaveChanges();
         }
 
         public void Update(ConversationMember member)
         {
-            this.context.Entry(member).State = System.Data.Entity.EntityState.Modified;
-            this.context.SaveChanges();
+            MyContext.Get().Entry(member).State = System.Data.Entity.EntityState.Modified;
+            MyContext.Get().SaveChanges();
         }
 
         public void Delete(ConversationMember member)
         {
-            this.context.Members.Remove(member);
-            this.context.SaveChanges();
+            MyContext.Get().Members.Remove(member);
+            MyContext.Get().SaveChanges();
         }
     }
 }

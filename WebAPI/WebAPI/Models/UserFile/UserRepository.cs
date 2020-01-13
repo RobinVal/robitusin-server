@@ -9,41 +9,40 @@ namespace WebAPI.Models
 {
     public class UserRepository
     {
-        private MyContext context = new MyContext();
-
+        
         public List<User> FindAll()
         {
-            return this.context.Users.ToList();
+            return MyContext.Get().Users.ToList();
         }
 
         public User FindById(int Id)
         {
             //return this.context.People.Where(x => x.Id == id).FirstOrDefault();
-            return this.context.Users.Find(Id);
+            return MyContext.Get().Users.Find(Id);
         }
 
         public void Create(User user)
         {
-            this.context.Users.Add(user);
+            MyContext.Get().Users.Add(user);
             //this.context.SaveChanges();
         }
 
         public void Update(User user)
         {
-        
 
-            this.context.Entry(user).State = System.Data.Entity.EntityState.Modified;
-            this.context.SaveChanges();
+
+            MyContext.Get().Entry(user).State = System.Data.Entity.EntityState.Modified;
+            MyContext.Get().SaveChanges();
         }
 
         public void Delete(User user)
         {
-            this.context.Users.Remove(user);
-            this.context.SaveChanges();
+            MyContext.Get().Users.Remove(user);
+            MyContext.Get().SaveChanges();
         }
         public User FindByUserName(string name)
         {
-            return this.context.Users.Where(u => u.Username == name).First();
+            return MyContext.Get().Users.Where(u => u.Username == name).First();
         }
     }
 }
