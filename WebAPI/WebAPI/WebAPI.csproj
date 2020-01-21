@@ -208,6 +208,7 @@
     <Compile Include="Models\Message\MessageRepository.cs" />
     <Compile Include="Models\UserFile\LoginInput.cs" />
     <Compile Include="Models\UserFile\MyContext.cs" />
+    <Compile Include="Models\UserFile\RegisterInput.cs" />
     <Compile Include="Models\UserFile\User.cs" />
     <Compile Include="Models\UserFile\UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

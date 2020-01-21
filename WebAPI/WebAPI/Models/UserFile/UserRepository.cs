@@ -24,7 +24,7 @@ namespace WebAPI.Models
         public void Create(User user)
         {
             MyContext.Get().Users.Add(user);
-            //this.context.SaveChanges();
+            
         }
 
         public void Update(User user)

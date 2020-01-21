@@ -5,12 +5,14 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using WebAPI.Models;
+using WebAPI.Models.UserFile;
 
 namespace WebAPI.Controllers
 {
     public class UserController : ApiController
     {
         
+        int IDe = 1;
         private UserRepository repository = new UserRepository();
 
         [Route("api/User/Login")]
@@ -31,19 +33,30 @@ namespace WebAPI.Controllers
         {
             return this.repository.FindAll();
         }
-
+        // GET: api/User/Username
+        public User GetByUsername(string username)
+        {
+            return this.repository.FindByUserName(username);
+        }
         // GET: api/User/5
         public User Get(int Id)
         {
             return this.repository.FindById(Id);
         }
 
-        // POST: api/User
-        public void Post([FromBody]User value)
+        [Route("api/User/Register")]
+        public void Post([FromBody]RegisterInput value)
         {
+            User novy = new User();
             
+            novy.Username = value.Username;
+            novy.Password = value.Password;
+            novy.Email = value.Email;
+            novy.ProfileImage = value.ProfileImage;
+            novy.Token = value.Token;
+            novy.Id = ++IDe;
 
-            this.repository.Create(value);
+            this.repository.Create(novy);
 
         }
 
