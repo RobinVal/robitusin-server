@@ -37,6 +37,12 @@ namespace WebAPI.Models
 
             return Self;
         }
+
+        public static void Save()
+        {
+            MyContext.Get().SaveChanges();
+        }
+        
     }
 
 }
