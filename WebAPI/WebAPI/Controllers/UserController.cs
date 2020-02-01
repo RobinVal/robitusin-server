@@ -37,8 +37,16 @@ namespace WebAPI.Controllers
         // GET: api/User/Username
         public User GetByUsername(string username)
         {
+
+            try { 
             return this.repository.FindByUserName(username);
-        }
+            }
+            catch
+            {
+                 throw new UnauthorizedAccessException();
+            }
+
+            }
         // GET: api/User/5
         public User Get(int Id)
         {
