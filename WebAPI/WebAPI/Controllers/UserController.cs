@@ -48,6 +48,14 @@ namespace WebAPI.Controllers
         [Route("api/User/Register")]
         public void Post([FromBody]RegisterInput value)
         {
+            User userTest = repository.FindByUserName(value.Username);
+            if (userTest.Username == value.Username)
+            {
+                throw new UnauthorizedAccessException();
+            } else
+            {
+
+
             User novy = new User();
             
             novy.Username = value.Username;
@@ -58,7 +66,9 @@ namespace WebAPI.Controllers
             novy.Id = ++IDe;
 
             this.repository.Create(novy);
-            
+
+            }
+
         }
 
         // PUT: api/User/5

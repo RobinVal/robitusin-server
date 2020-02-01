@@ -37,5 +37,9 @@ namespace WebAPI.Models.Message
             MyContext.Get().Messages.Remove(message);
             MyContext.Get().SaveChanges();
         }
+        public List<Message> FindByConversationId(int id)
+        {
+            return MyContext.Get().Messages.Where(m => m.ConversationId == id).ToList();
+        }
     }
 }
