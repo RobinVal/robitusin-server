@@ -13,37 +13,46 @@ namespace WebAPI.Controllers
     {
         private MessageRepository repository = new MessageRepository();
 
-        // GET: api/ConversationMember
+        // GET: api/Message
         public IEnumerable<Message> Get()
         {
             return this.repository.FindAll();
         }
 
-        // GET: api/ConversationMember/5
+        // GET: api/Message/5
         public Message Get(int Id)
         {
             return this.repository.FindById(Id);
         }
 
-        // POST: api/ConversationMember
+        // POST: api/Message
         public void Post([FromBody]Message value)
         {
             this.repository.Create(value);
 
         }
 
-        // PUT: api/ConversationMember/5
+        // PUT: api/Message/5
         public void Put(int Id, [FromBody]Message value)
         {
             value.Id = Id;
             this.repository.Update(value);
         }
 
-        // DELETE: api/ConversationMember/5
+        // DELETE: api/Message/5
         public void Delete(int Id)
         {
             Message message = this.repository.FindById(Id);
             this.repository.Delete(message);
         }
+
+        [Route("api/Message/MessageByConversationId/{id}")]
+        [HttpGet]
+        public IEnumerable<Message> MessageByConversationId (int id)
+        {
+           
+             return this.repository.FindByConversationId(2);
+        }
+
     }
 }
